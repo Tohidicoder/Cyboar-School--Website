@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import aboutRoutes from "./routes/aboutRoutes";
+// import academicsRoutes from "./routes/academicsRoutes";   // هم‌تیمی‌ها
+// import admissionRoutes from "./routes/admissionRoutes";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <h1>Cyboard School</h1>
-    </div>
-  )
+    <Routes>
+      <Route element={<Layout />}>
+        {aboutRoutes}
+        {/* {academicsRoutes} */}
+        {/* {admissionRoutes} */}
+      </Route>
+    </Routes>
+  );
 }
-
-export default App
-
-

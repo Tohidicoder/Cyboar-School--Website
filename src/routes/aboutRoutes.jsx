@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
 import WhatWeDo from "../pages/about/WhatWeDo";
-// import Accreditation from "../pages/about/Accreditation";
+import Accreditation from "../pages/about/Accreditation";
 // import CyboardStory from "../pages/about/CyboardStory";
 // import Leadership from "../pages/about/Leadership";
 // import LeaderProfile from "../pages/about/LeaderProfile";
@@ -12,7 +12,8 @@ import WhatWeDo from "../pages/about/WhatWeDo";
 const aboutRoutes = (
   <>
     <Route path="what-we-do" element={<WhatWeDo />} />
-    {/* <Route path="accreditation" element={<Accreditation />} />
+     <Route path="accreditation" element={<Accreditation />} />
+    {/*} />
     <Route path="cyboard-story-learning-from-chalk-to-click" element={<CyboardStory />} />
     <Route path="cyboard-leadership" element={<Leadership />} />
     <Route path="cyboard-leadership/:slug" element={<LeaderProfile />} />

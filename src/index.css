@@ -1,14 +1,11 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+@theme {
+  --color-brand-dark: #0F3D2E;
+  --color-brand: #165C42;
+  --color-brand-light: #E7F1EC;
+  --color-brand-gold: #E3A82B;
+  --color-brand-cream: #F8F6EF;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
 }

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
+import Layout from "/src/layouts/layout"; 
 import aboutRoutes from "./routes/aboutRoutes";
 // import academicsRoutes from "./routes/academicsRoutes";   // هم‌تیمی‌ها
 // import admissionRoutes from "./routes/admissionRoutes";

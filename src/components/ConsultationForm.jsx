@@ -4,7 +4,13 @@ const classes = ["Nursery", "KG", ...Array.from({ length: 12 }, (_, i) => String
 const input =
 "w-full rounded-xl border border-brand/20 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/30";
 
-export default function ConsultationForm({ id, title = "Book a Consultation", text }) {
+export default function ConsultationForm({
+id,
+title = "Book a Consultation",
+text,
+button = "Book a Consultation",
+extended = false, // فیلدهای نام دانش‌آموز، شهر و استان
+}) {
 const [sent, setSent] = useState(false);
 
 const onSubmit = (e) => {
@@ -25,9 +31,12 @@ return (
   ) : (
     <form onSubmit={onSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
       <input name="parent" required placeholder="Parent's Name *" className={input} />
+      {extended && <input name="student" required placeholder="Student's Name *" className={input} />}
       <input name="email" type="email" required placeholder="Email Address *" className={input} />
       <input name="phone" type="tel" required placeholder="Phone *" className={input} />
-      <input name="altPhone" type="tel" placeholder="Alternative Number" className={input} />
+      {!extended && <input name="altPhone" type="tel" placeholder="Alternative Number" className={input} />}
+      {extended && <input name="city" required placeholder="City *" className={input} />}
+      {extended && <input name="state" required placeholder="State/Province *" className={input} />}
       <select name="class" required defaultValue="" className={`${input} sm:col-span-2`}>
         <option value="" disabled>Applying for Class *</option>
         {classes.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -36,10 +45,10 @@ return (
         type="submit"
         className="rounded-full bg-brand-gold px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand-dark transition hover:brightness-110 sm:col-span-2"
       >
-        Book a Consultation →
+        {button} →
       </button>
       <p className="text-center text-xs text-gray-500 sm:col-span-2">
-        🔒 100% Confidential • Direct 1-on-1 Consultation • Zero Obligation
+        🔒 100% Confidential • Zero Obligation. This is a request for guidance, not an admission application.
       </p>
     </form>
   )}

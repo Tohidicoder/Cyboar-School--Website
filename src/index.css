@@ -1,11 +1,134 @@
 @import "tailwindcss";
 
-@theme {
-  --color-brand-dark: #0F3D2E;
-  --color-brand: #165C42;
-  --color-brand-light: #E7F1EC;
-  --color-brand-gold: #E3A82B;
-  --color-brand-cream: #F8F6EF;
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Poppins", sans-serif;
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #28232d;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --cy-purple: #713e83;
+  --cy-purple-dark: #43234f;
+  --cy-orange: #f48735;
+  --cy-lilac: #f8f3fa;
+  --cy-ink: #28232d;
+  --cy-muted: #706a75;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+::selection {
+  color: white;
+  background: var(--cy-purple);
+}
+
+.bg-brand-purple {
+  background-color: var(--cy-purple);
+}
+.bg-brand-orange {
+  background-color: var(--cy-orange);
+}
+.bg-brand-light {
+  background-color: var(--cy-lilac);
+}
+.text-brand-purple {
+  color: var(--cy-purple);
+}
+.text-brand-orange {
+  color: var(--cy-orange);
+}
+.border-brand-purple {
+  border-color: var(--cy-purple);
+}
+
+.container-site {
+  width: min(100% - 2.5rem, 1200px);
+  margin-inline: auto;
+}
+.section-space {
+  padding-block: clamp(4rem, 7vw, 6.5rem);
+}
+.brand-gradient {
+  background: linear-gradient(120deg, #43234f 0%, #713e83 62%, #8d5a9d 100%);
+}
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  background: var(--cy-orange);
+  color: white;
+  font-weight: 700;
+  transition:
+    transform 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+  box-shadow: 0 9px 24px #f487352e;
+}
+.brand-button:hover {
+  transform: translateY(-3px);
+  background: #df6f22;
+  box-shadow: 0 12px 28px #f4873540;
+}
+.brand-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffffa8;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  color: white;
+  font-weight: 700;
+  transition: 0.25s;
+}
+.brand-outline:hover {
+  background: white;
+  color: var(--cy-purple);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply w-full rounded-xl border border-[#683879]/10 bg-[#FCF9FD] px-4 py-3.5 text-sm text-[#302638] outline-none transition duration-300 placeholder:text-gray-400 focus:border-[#683879] focus:ring-2 focus:ring-[#683879]/10;
+  }
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const classes = ["Nursery", "KG", ...Array.from({ length: 12 }, (_, i) => String(i + 1))];
+
 const input =
 "w-full rounded-xl border border-brand/20 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/30";
 
@@ -9,8 +9,12 @@ id,
 title = "Book a Consultation",
 text,
 button = "Book a Consultation",
-extended = false, // فیلدهای نام دانش‌آموز، شهر و استان
+extended = false, 
+student = false,
+maxClass = 12,
+
 }) {
+const classes = ["Nursery", "KG", ...Array.from({ length: maxClass }, (_, i) => String(i + 1))];
 const [sent, setSent] = useState(false);
 
 const onSubmit = (e) => {
@@ -31,10 +35,10 @@ return (
   ) : (
     <form onSubmit={onSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
       <input name="parent" required placeholder="Parent's Name *" className={input} />
-      {extended && <input name="student" required placeholder="Student's Name *" className={input} />}
+      {(extended || student) && <input name="student" required placeholder="Student's Name *" className={input} />}
       <input name="email" type="email" required placeholder="Email Address *" className={input} />
       <input name="phone" type="tel" required placeholder="Phone *" className={input} />
-      {!extended && <input name="altPhone" type="tel" placeholder="Alternative Number" className={input} />}
+     {!extended && !student && <input name="altPhone" type="tel" placeholder="Alternative Number" className={input} />}
       {extended && <input name="city" required placeholder="City *" className={input} />}
       {extended && <input name="state" required placeholder="State/Province *" className={input} />}
       <select name="class" required defaultValue="" className={`${input} sm:col-span-2`}>

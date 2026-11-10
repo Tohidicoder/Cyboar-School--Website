@@ -6,7 +6,7 @@ import Leadership from "../pages/about/Leadership";
 import LeaderProfile from "../pages/about/LeaderProfile";
 import Homeschooling from "../pages/about/Homeschooling";
 import TransferableJobs from "../pages/about/TransferableJobs";
-// import PhysicallyDisabled from "../pages/about/PhysicallyDisabled";
+import PhysicallyDisabled from "../pages/about/PhysicallyDisabled";
 // import BeyondAcademics from "../pages/about/BeyondAcademics";
 
 const aboutRoutes = (
@@ -18,13 +18,14 @@ const aboutRoutes = (
       <Route path="cyboard-leadership/:slug" element={<LeaderProfile />} />
       <Route path="homeschooling" element={<Homeschooling />} />
       <Route path="transferable-jobs" element={<TransferableJobs />} />
+      <Route path="inspiring-abilities" element={<PhysicallyDisabled />} />
     {/*} />
   
    
     <Route path="cyboard-leadership/:slug" element={<LeaderProfile />} />
     <Route path="homeschooling" element={<Homeschooling />} />
     <Route path="transferable-jobs" element={<TransferableJobs />} />
-    <Route path="inspiring-abilities" element={<PhysicallyDisabled />} />
+    
     {/* <Route path="beyond-academics" element={<BeyondAcademics />} /> */}
   </>
 );

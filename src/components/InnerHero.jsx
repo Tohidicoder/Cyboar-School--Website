@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function InnerHero({
-title, subtitle, image, imageAlt = "", badges = [], children,
+title, subtitle, image, imageAlt = "", imagePosition = "center",badges = [], children,
 }) {
 const hasImage = Boolean(image);
 
@@ -69,11 +69,12 @@ transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         {/* دایره‌ی تزئینی */}
         <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-brand-gold" />
 
-        <img
-          src={image}
-          alt={imageAlt}
-          className="relative aspect-square w-full rounded-[2rem] object-cover shadow-2xl"
-        />
+       <img
+        src={image}
+        alt={imageAlt}
+        style={{ objectPosition: imagePosition }}
+        className="relative aspect-square w-full rounded-[2rem] object-cover shadow-2xl"
+      />
 
         {/* کارت‌های شناور */}
         {badges.slice(0, 2).map((b, i) => (
